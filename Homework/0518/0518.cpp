@@ -1,4 +1,4 @@
-int StringCount(char* _Arr)
+int StringCount(const char* _Arr)
 {
     //int ChCount = 0;
     //while (Arr[ChCount])
@@ -24,6 +24,11 @@ int StringCount(char* _Arr)
 
 void ChangeCh(char* _Arr, char _PrevCh, char _NextCh)
 {
+    if (_Arr == nullptr)
+    {
+        return;
+    }
+
     for (int i = 0; _Arr[i]; ++i)
     {
         if (_Arr[i] == _PrevCh)
