@@ -72,14 +72,26 @@ int DigitsCount(int _Number)
 
 void StrCopy(const char* const _Left, char* _Right)
 {
+	if (_Left == nullptr || _Right == nullptr)
+	{
+		return;
+	}
+
 	for (int i = 0; _Left[i]; ++i)
 	{
 		_Right[i] = _Left[i];
 	}
+
+	return;
 }
 
 void NumberToString(int _Number, char* Right)
 {
+	if (_Number == 0)
+	{
+		Right[0] = '0';
+		return;
+	}
 	int i{};
 	
 	for (i = 0; _Number; ++i)
@@ -96,6 +108,8 @@ void NumberToString(int _Number, char* Right)
 		Right[j] = Right[i - j - 1];
 		Right[i - j - 1] = temp;
 	}
+
+	return;
 }
 
 
@@ -134,7 +148,9 @@ int main()
 		// int를 char로 형변환
 		char Result[256]{};
 
-		NumberToString(312312, Result);
+		NumberToString(0, Result);
 		// Result = "312312";
+
+		int i = 0;
 	}
 }
