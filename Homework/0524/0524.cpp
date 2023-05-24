@@ -114,7 +114,7 @@ public:
 
     void AddPos(const int4& _Pos)
     {
-        Pos += _Pos;
+            Pos += _Pos;
     }
 
 
@@ -140,16 +140,28 @@ public:
         switch (Select)
         {
         case 'a':
-            AddPos(Left);
+            if (Pos.X > 0)
+            {
+                AddPos(Left);
+            }
             break;
         case 'd':
-            AddPos(Right);
+            if (Pos.X < XLine - 1)
+            {
+                AddPos(Right);
+            }
             break;
         case 'w':
-            AddPos(Up);
+            if (Pos.Y > 0)
+            {
+                AddPos(Up);
+            }
             break;
         case 's':
-            AddPos(Down);
+            if (Pos.Y < YLine - 1)
+            {
+                AddPos(Down);
+            }
             break;
         default:
             break;
