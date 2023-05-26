@@ -12,5 +12,4 @@ int main()
 
 	FightZone FZone;
 	FZone.Fight(NewPlayer, NewMonster);
-
 }

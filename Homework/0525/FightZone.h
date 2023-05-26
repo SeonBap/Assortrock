@@ -8,4 +8,3 @@ class FightZone
 public:
 	void Fight(Player& NewPlayer, Monster& NewMonster);
 };
-

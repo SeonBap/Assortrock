@@ -5,7 +5,7 @@ class Player
 private:
 	char Name[40] = "Player";
 	int Att = 10;
-	int Hp = 10;
+	int Hp = 100;
 
 public:
 	void StatusRender();
@@ -15,4 +15,3 @@ public:
 	int GetAtt();
 	bool IsDeath();
 };
-

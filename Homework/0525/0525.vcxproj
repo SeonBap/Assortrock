@@ -133,6 +133,7 @@
     <ClInclude Include="SCount.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="0525.cpp" />
     <ClCompile Include="FightZone.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />

@@ -15,4 +15,3 @@ public:
 	int GetAtt();
 	bool IsDeath();
 };
-

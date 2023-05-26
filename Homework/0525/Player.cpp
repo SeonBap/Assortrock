@@ -8,9 +8,6 @@ void Player::StatusRender()
 
 	Count = StringCount(Name);
 
-	// 40개로 맞춰오세요.
-
-	// 줄바꿈이 안되고 있습니다.
 	printf_s("%s", Name);
 
 	for (size_t i = 0; i < LineCount - Count; i++)
