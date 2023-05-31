@@ -38,11 +38,14 @@ public:
 
 	void reserve(size_t _capacity)
 	{
+		// 같은 주소를 가르킨다.
 		DataType* PrevPtr = ArrPtr;
 
+		// 같은 주소를 가르키고 같은 데이터를 가지고 있는데 지워버리면 두개가 같이 날아가서 주소와 데이터가 없어짐
 		if (nullptr != ArrPtr)
 		{
 			delete ArrPtr;
+			ArrPtr = nullptr;
 		}
 
 		// 1회의 new가 일어났다면 1회의 delete가 어딘가에 존재해야 한다.
