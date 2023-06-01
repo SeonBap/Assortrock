@@ -1,11 +1,10 @@
 #pragma once
 
-using DataType = int;
-
+template<typename T>
 class HVector
 {
 public:
-	DataType& operator[](size_t _Index)
+	T& operator[](size_t _Index)
 	{
 		return ArrPtr[_Index];
 	}
@@ -13,8 +12,8 @@ public:
 	void operator=(HVector& _Other)
 	{
 		this->sizeValue = _Other.sizeValue;
-		this->ArrPtr = new DataType[_Other.capacityValue];
-		this->capacityValue = (DataType)_Other.capacityValue;
+		this->ArrPtr = new T[_Other.capacityValue];
+		this->capacityValue = (T)_Other.capacityValue;
 
 		for (size_t i = 0; i < _Other.sizeValue; ++i)
 		{
@@ -32,7 +31,7 @@ public:
 		return capacityValue;
 	}
 
-	void push_back(const DataType& _Data)
+	void push_back(const T& _Data)
 	{
 		if (sizeValue + 1 > capacityValue)
 		{
@@ -45,9 +44,9 @@ public:
 
 	void reserve(size_t _capacity)
 	{
-		DataType* PrevPtr = ArrPtr;
+		T* PrevPtr = ArrPtr;
 
-		ArrPtr = new DataType[_capacity];
+		ArrPtr = new T[_capacity];
 
 		if (nullptr != PrevPtr)
 		{
@@ -80,5 +79,5 @@ public:
 private:
 	int sizeValue = 0;
 	int capacityValue = 0;
-	DataType* ArrPtr = nullptr;
+	T* ArrPtr = nullptr;
 };

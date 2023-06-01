@@ -12,7 +12,7 @@ int main()
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	{
-		HVector Arr;
+		HVector<int> Arr;
 
 		for (size_t i = 0; i < 10; i++)
 		{
@@ -25,7 +25,7 @@ int main()
 		}
 
 
-		HVector Arr0;
+		HVector<int> Arr0;
 
 		// 릭을 해결하는 순간 터질겁니다.
 		// 정상적인 복사가 이루어지게 하세요.
