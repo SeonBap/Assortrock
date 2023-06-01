@@ -4,7 +4,7 @@
 #include <assert.h>
 
 // 1. Push_front를 만들어보세요.
-// 2. leck 잡으세요
+// 2. leak 잡으세요
 
 using DataType = int;
 
@@ -18,7 +18,6 @@ private:
 		ListNode* Prev = nullptr;
 		ListNode* Next = nullptr;
 	};
-
 
 public:
 	class iterator
@@ -66,7 +65,40 @@ public:
 		EndNode->Prev = StartNode;
 	}
 
+	~HList()
+	{
+		iterator EraseIter = this->begin();
+
+		while (EraseIter != this->EndNode)
+		{
+			EraseIter = (*this).erase(EraseIter);
+		}
+
+		if (nullptr != StartNode)
+		{
+			delete StartNode;
+		}
+		if (nullptr != EndNode)
+		{
+			delete EndNode;
+		}
+	}
+
 	// void Push_front를 만들어보세요.
+	void push_front(const DataType& _Data)
+	{
+		ListNode* NewNode = new ListNode();
+		NewNode->Value = _Data;
+
+		ListNode* NextNode = StartNode->Next;
+
+		NextNode->Prev = NewNode;
+		StartNode->Next = NewNode;
+
+		NewNode->Next = NextNode;
+		NewNode->Prev = StartNode;
+	}
+
 	void push_back(const DataType& _Data)
 	{
 		ListNode* NewNode = new ListNode();
@@ -98,7 +130,7 @@ public:
 		PrevNode->Next = NextNode;
 		NextNode->Prev = PrevNode;
 
-		if (nullptr == Node)
+		if (nullptr != Node)
 		{
 			delete Node;
 		}
@@ -153,6 +185,11 @@ int main()
 			NewList.push_back(i);
 		}
 
+		for (int i = 0; i < 10; i++)
+		{
+			NewList.push_front(i);
+		}
+
 		HList::iterator StartIter = NewList.begin();
 		HList::iterator EndIter = NewList.end();
 
@@ -166,11 +203,10 @@ int main()
 
 		EraseIter = NewList.erase(EraseIter);
 
-
 		for (; StartIter != EndIter; ++StartIter)
 		{
 			std::cout << (*StartIter) << std::endl;
+
 		}
 	}
-
 }
