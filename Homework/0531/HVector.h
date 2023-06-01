@@ -61,7 +61,7 @@ public:
 
 		if (nullptr != PrevPtr)
 		{
-			delete PrevPtr;
+			delete[] PrevPtr;
 			PrevPtr = nullptr;
 		}
 	}
@@ -70,10 +70,9 @@ public:
 	{
 		if (nullptr != ArrPtr)
 		{
-			delete ArrPtr;
+			delete[] ArrPtr;
 			ArrPtr = nullptr;
 		}
-
 	}
 
 private:

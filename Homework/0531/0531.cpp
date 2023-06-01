@@ -24,7 +24,6 @@ int main()
 			std::cout << Arr[i] << std::endl;
 		}
 
-
 		HVector<int> Arr0;
 
 		// 릭을 해결하는 순간 터질겁니다.
@@ -35,9 +34,5 @@ int main()
 		{
 			std::cout << Arr0[i] << std::endl;
 		}
-
 	}
-
-
-
 }
