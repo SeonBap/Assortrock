@@ -2,10 +2,10 @@
 #include <vector>
 #include "HVector.h"
 
-// 숙제 => HVector의 leck을 없애와라
+// 숙제0 => HVector의 leck을 없애와라
 //         대입연산자를 사용하면 터지는걸 정상으로 돌려놔라.
 //         이미 보여준 코드 이미 array에서 해결은 한거에요.
-
+// 숙제1 => 템플릿으로 바꾸세요.
 
 int main()
 {
