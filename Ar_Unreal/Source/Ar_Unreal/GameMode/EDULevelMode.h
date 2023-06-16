@@ -14,4 +14,7 @@ class AR_UNREAL_API AEDULevelMode : public AGameMode
 {
 	GENERATED_BODY()
 	
+	AEDULevelMode();
+
+	void BeginPlay() override;
 };

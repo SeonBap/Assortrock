@@ -3,3 +3,14 @@
 
 #include "EDULevelMode.h"
 
+AEDULevelMode::AEDULevelMode()
+{
+
+}
+
+void AEDULevelMode::BeginPlay()
+{
+	Super::BeginPlay();
+
+	UE_LOG(LogTemp, Log, TEXT("Creat EDULevelMode"));
+}
